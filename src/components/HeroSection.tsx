@@ -73,7 +73,7 @@ export function HeroSection() {
 
           {/* Right: photo */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[540px]">
+            <div className="relative w-full max-w-[420px]">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-border/20 group">
                 <Image
                   src="/images/foto-marlon.png"
