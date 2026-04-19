@@ -52,9 +52,9 @@ export function HeroSection() {
                 href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-primary text-white font-medium px-8 py-4 rounded-xl text-lg hover:bg-primary/90 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2.5 bg-primary text-white font-medium px-6 py-4 rounded-xl text-base whitespace-nowrap hover:bg-primary/90 transition-colors shadow-sm"
               >
-                <Calendar className="w-5 h-5" />
+                <Calendar className="w-5 h-5 shrink-0" />
                 Iniciar Avaliação do Meu Caso no WhatsApp
               </a>
               <a
@@ -73,7 +73,7 @@ export function HeroSection() {
 
           {/* Right: photo */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[420px]">
+            <div className="relative w-full max-w-[540px]">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-border/20 group">
                 <Image
                   src="/images/foto-marlon.png"
