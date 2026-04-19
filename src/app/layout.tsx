@@ -14,10 +14,40 @@ const poppins = Poppins({
   weight: ["600", "700", "800"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrmadvogados.com.br";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Veículo Bloqueado ou em Busca e Apreensão? Entenda Seus Direitos",
   description:
     "Seu veículo foi bloqueado ou tomado pelo banco? Existem direitos que a financeira não te conta. Antes de desistir do seu bem, entenda o que a lei permite - com transparência.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "MRM Advogados",
+    title: "Veículo Bloqueado ou em Busca e Apreensão? Entenda Seus Direitos",
+    description:
+      "Seu veículo foi bloqueado ou tomado pelo banco? Existem direitos que a financeira não te conta. Antes de desistir do seu bem, entenda o que a lei permite - com transparência.",
+    locale: "pt_BR",
+    images: [
+      {
+        url: "/images/foto-marlon.png",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Marlon Rocha - Especialista em Busca e Apreensão de Veículos",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veículo Bloqueado ou em Busca e Apreensão? Entenda Seus Direitos",
+    description:
+      "Seu veículo foi bloqueado ou tomado pelo banco? Existem direitos que a financeira não te conta. Antes de desistir do seu bem, entenda o que a lei permite - com transparência.",
+    images: ["/images/foto-marlon.png"],
+  },
   icons: {
     icon: "/images/miniatura.png",
     apple: "/images/miniatura.png",
