@@ -58,17 +58,19 @@ export function FAQSection() {
             const isOpen = open === i;
             return (
               <div key={i} className="w-full">
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 py-5 text-left hover:text-foreground/80 transition-colors"
-                >
-                  <span className="text-sm font-semibold text-foreground">
-                    {item.q}
-                  </span>
-                  <span className="text-xl font-light text-foreground/40 shrink-0 leading-none">
-                    {isOpen ? "−" : "+"}
-                  </span>
-                </button>
+                <h3 className="m-0">
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 py-5 text-left hover:text-foreground/80 transition-colors"
+                  >
+                    <span className="text-sm font-semibold text-foreground">
+                      {item.q}
+                    </span>
+                    <span className="text-xl font-light text-foreground/40 shrink-0 leading-none">
+                      {isOpen ? "−" : "+"}
+                    </span>
+                  </button>
+                </h3>
                 {isOpen && (
                   <div className="pb-5">
                     <p className="text-sm text-foreground/70 leading-relaxed">

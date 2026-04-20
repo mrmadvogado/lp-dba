@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { JsonLd } from "@/components/JsonLd";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -64,7 +65,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }

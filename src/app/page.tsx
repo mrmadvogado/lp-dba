@@ -1,6 +1,3 @@
-"use client";
-
-import { useReveal } from "@/hooks/useReveal";
 import { AlertBar } from "@/components/AlertBar";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
@@ -15,12 +12,13 @@ import { CTASection } from "@/components/CTASection";
 import { LegalNoticesSection } from "@/components/LegalNoticesSection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
+import { RevealObserver } from "@/components/RevealObserver";
 
 export default function Home() {
-  useReveal();
-
   return (
     <>
+      <RevealObserver />
+
       {/* Fixed header: alert bar + navbar */}
       <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
         <AlertBar />

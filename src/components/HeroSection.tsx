@@ -79,6 +79,7 @@ export function HeroSection() {
                   src="/images/foto-marlon.png"
                   alt="Dr. Marlon Rocha - Especialista em Busca e Apreensão de Veículos"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   priority
                 />
