@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mrmadvogados.com.br/sitemap.xml
+Sitemap: https://lp-dba.vercel.app/sitemap.xml

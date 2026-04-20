@@ -15,7 +15,7 @@ const poppins = Poppins({
   weight: ["600", "700", "800"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrmadvogados.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lp-dba.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

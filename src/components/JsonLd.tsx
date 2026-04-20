@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrmadvogados.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lp-dba.vercel.app";
 
 const organizationSchema = {
   "@context": "https://schema.org",
