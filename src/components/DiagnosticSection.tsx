@@ -43,12 +43,29 @@ export function DiagnosticSection() {
             className="text-4xl lg:text-5xl font-bold mb-4"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Seu Caso Pode se Enquadrar?
+            Seu caso pode ter defesa: descubra agora
           </h2>
           <p className="text-foreground/60">
-            Responda às perguntas abaixo para ter uma primeira indicação se o
-            seu veículo está em risco e como podemos ajudar.
+            Marque as situações que se aplicam ao seu caso. Se você marcar 2 ou
+            mais, há fundamentos que precisam ser analisados com urgência.
           </p>
+        </div>
+
+        {/* Progress bar */}
+        <div className="reveal mb-4">
+          <div className="flex items-center justify-between text-xs text-foreground/50 mb-1.5">
+            <span>Seu progresso</span>
+            <span>{count}/{questions.length} itens</span>
+          </div>
+          <div className="w-full h-2 bg-border/40 rounded-full overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-500"
+              style={{
+                width: `${(count / questions.length) * 100}%`,
+                backgroundColor: count >= 2 ? "rgb(37,211,102)" : "rgb(27,45,79)",
+              }}
+            />
+          </div>
         </div>
 
         {/* Checklist */}
@@ -87,12 +104,38 @@ export function DiagnosticSection() {
           </div>
         </div>
 
-        {/* CTA when items checked */}
+        {/* Feedback por número de itens marcados */}
+        {count === 0 && (
+          <div className="mt-6 text-center">
+            <p className="text-sm text-foreground/50">
+              Marque as situações que se aplicam ao seu caso para receber uma orientação.
+            </p>
+          </div>
+        )}
+
+        {count === 1 && (
+          <div className="mt-6 text-center">
+            <p className="text-sm text-foreground/60">
+              Você marcou <strong>1 item</strong>. Mesmo um único ponto pode ter implicações jurídicas. Se tiver dúvida, vale conversar.
+            </p>
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Tirar uma dúvida no WhatsApp
+            </a>
+          </div>
+        )}
+
         {count >= 2 && (
-          <div className="mt-6 text-center reveal reveal-active">
+          <div className="mt-6 text-center">
             <p className="text-sm text-foreground/60 mb-4">
-              Você marcou <strong>{count} itens</strong> - seu caso merece uma
-              análise técnica imediata.
+              Você marcou <strong>{count} itens</strong>. Isso indica que seu caso
+              tem fundamentos para análise técnica imediata. Cada dia sem defesa
+              é um prazo que se fecha.
             </p>
             <a
               href={WA_URL}
@@ -101,7 +144,7 @@ export function DiagnosticSection() {
               className="inline-flex items-center gap-2.5 bg-[rgb(37,211,102)] text-white font-semibold px-8 py-4 rounded-full hover:bg-[rgb(30,190,90)] transition-all shadow-[0_0_28px_rgba(37,211,102,0.55)] hover:shadow-[0_0_40px_rgba(37,211,102,0.75)]"
             >
               <MessageCircle className="w-5 h-5" />
-              Quero entender meu caso agora
+              Quero Defender Meu Veículo Agora
             </a>
           </div>
         )}

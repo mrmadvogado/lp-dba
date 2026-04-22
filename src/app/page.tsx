@@ -9,9 +9,10 @@ import { DiagnosticSection } from "@/components/DiagnosticSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FAQSection } from "@/components/FAQSection";
 import { CTASection } from "@/components/CTASection";
-import { LegalNoticesSection } from "@/components/LegalNoticesSection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
+import { MobileStickyBar } from "@/components/MobileStickyBar";
+import { CookieConsent } from "@/components/CookieConsent";
 import { RevealObserver } from "@/components/RevealObserver";
 
 export default function Home() {
@@ -29,20 +30,25 @@ export default function Home() {
       <main>
         <HeroSection />
         <ProblemsSection />
-        <LegalRightsSection />
+        <AboutSection />
         <HowItWorksSection />
+        <LegalRightsSection />
         <CaseStudySection />
         <DiagnosticSection />
-        <AboutSection />
         <FAQSection />
         <CTASection />
-        <LegalNoticesSection />
       </main>
 
       <Footer />
 
-      {/* Floating WhatsApp button */}
+      {/* Floating WhatsApp button (desktop) */}
       <WhatsAppFAB />
+
+      {/* Sticky bottom bar (mobile only) */}
+      <MobileStickyBar />
+
+      {/* LGPD cookie consent */}
+      <CookieConsent />
     </>
   );
 }

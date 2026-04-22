@@ -23,6 +23,12 @@ export function Footer() {
         <p className="text-xs text-foreground/40 text-center">
           Publicidade em conformidade com o Provimento OAB nº 205/2021
         </p>
+        <p className="text-xs text-foreground/35 text-center max-w-lg leading-relaxed italic">
+          Esta página tem caráter meramente informativo e não constitui
+          aconselhamento jurídico. Nenhuma promessa de resultado é feita. Cada
+          caso é único e será analisado de forma individualizada conforme os
+          fatos e documentos apresentados.
+        </p>
         <Link
           href="/politica-de-privacidade"
           className="text-xs text-foreground/40 hover:text-foreground/60 transition-colors underline underline-offset-2"

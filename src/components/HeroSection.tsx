@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Calendar, MessageCircle, ArrowRight, Cpu } from "lucide-react";
+import { MessageCircle, ArrowRight, Scale } from "lucide-react";
 
 const WA_URL =
   "https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
@@ -21,7 +21,7 @@ export function HeroSection() {
                 Direito do Consumidor · Financiamentos
               </span>
               <span className="inline-flex items-center gap-1.5 bg-white border border-border text-foreground/70 text-xs font-medium px-3 py-1.5 rounded-full">
-                <Cpu className="w-3.5 h-3.5" />
+                <Scale className="w-3.5 h-3.5" />
                 DL 911/69 • Alienação Fiduciária • RENAJUD
               </span>
             </div>
@@ -36,14 +36,15 @@ export function HeroSection() {
 
             {/* Subtext */}
             <p className="text-base lg:text-lg text-foreground/70 leading-relaxed max-w-lg">
-              Existem direitos que a financeira não te conta. Antes de desistir
-              do seu bem, entenda o que a lei permite - com transparência.
+              Há brechas legais que os bancos torcem para você não conhecer, e
+              que podem suspender a ação, devolver seu carro e renegociar sua
+              dívida nos termos da lei.
             </p>
 
             {/* Warning line */}
             <p className="flex items-center gap-1.5 text-sm text-[#B8902A] font-medium">
               <span>⏱️</span>
-              Cada dia sem orientação pode custar caro.
+              Após a apreensão, você tem 5 dias. Depois disso, as portas jurídicas começam a fechar.
             </p>
 
             {/* CTAs */}
@@ -54,8 +55,8 @@ export function HeroSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 bg-primary text-white font-medium px-6 py-4 rounded-xl text-base whitespace-nowrap hover:bg-primary/90 transition-colors shadow-sm"
               >
-                <Calendar className="w-5 h-5 shrink-0" />
-                Iniciar Avaliação do Meu Caso no WhatsApp
+                <MessageCircle className="w-5 h-5 shrink-0" />
+                Avaliar Meu Caso Agora, Gratuitamente
               </a>
               <a
                 href="#como-funciona"
@@ -66,9 +67,6 @@ export function HeroSection() {
               </a>
             </div>
 
-            <p className="text-xs tracking-widest text-foreground/40 uppercase font-medium">
-              Avaliação Técnica · Suporte Imediato
-            </p>
           </div>
 
           {/* Right: photo */}

@@ -11,7 +11,7 @@ const problems = [
 
 export function ProblemsSection() {
   return (
-    <section id="dores" className="py-20 bg-background">
+    <section id="dores" className="py-20" style={{ backgroundColor: "rgba(229,225,209,0.4)" }}>
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 reveal">
@@ -22,11 +22,11 @@ export function ProblemsSection() {
             className="text-4xl lg:text-5xl font-bold mb-4"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Você está passando por algum desses problemas?
+            Qual dessas situações é a sua?
           </h2>
           <p className="text-foreground/60 max-w-xl mx-auto">
-            Essas são as situações mais comuns que nossos clientes vivenciam
-            quando chegam até nós.
+            Essas são as situações mais comuns de quem chega até nós, geralmente
+            com menos tempo do que pensa.
           </p>
         </div>
 
@@ -55,11 +55,10 @@ export function ProblemsSection() {
         {/* Bottom note */}
         <div className="reveal text-center max-w-2xl mx-auto">
           <p className="text-sm text-foreground/60 leading-relaxed">
-            Se você se identificou com ao menos um desses pontos, você precisa
-            entender o que a lei permite antes de perder definitivamente seu
-            veículo.{" "}
+            Se você se identificou com ao menos um desses pontos, você
+            provavelmente já tem menos tempo do que pensa.{" "}
             <strong className="text-foreground">
-              Cada dia sem orientação pode fechar portas jurídicas importantes.
+              Cada dia a mais sem defesa fecha uma porta jurídica. Algumas não reabrem.
             </strong>
           </p>
         </div>

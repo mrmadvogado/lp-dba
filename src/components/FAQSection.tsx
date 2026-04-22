@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "O veículo já foi retirado - ainda dá para fazer alguma coisa?",
+    q: "O veículo já foi apreendido - ainda dá para fazer alguma coisa?",
     a: "Sim, há dois caminhos imediatos. O primeiro é a purgação da mora: após a apreensão, a lei garante 5 dias para pagar a integralidade da dívida e reaver o bem (Art. 3º, § 2º, DL 911/69). O segundo é a contestação: você tem 15 dias para apresentar defesa com base em irregularidades do processo, como notificação inválida ou juros abusivos (Art. 3º, § 3º). Entre em contato o quanto antes para não perder esses prazos.",
   },
   {
@@ -16,7 +16,7 @@ const faqs = [
     a: "O bloqueio via RENAJUD decorre de uma decisão judicial. A lei exige que a notificação de mora seja enviada ao endereço que consta no contrato. Se chegou em endereço diferente, foi devolvida como 'ausente' ou 'não procurado', a mora pode não ter sido comprovada corretamente - o que é fundamento para contestar ou extinguir a ação (STJ, AREsp 2007339).",
   },
   {
-    q: "O banco pode retomar meu veículo sem ordem judicial?",
+    q: "O banco pode tomar meu veículo sem ordem judicial?",
     a: "Não. Embora a Lei 14.711/2023 (Marco Legal das Garantias) tenha criado um procedimento extrajudicial de consolidação de propriedade, a parte que autorizava a apreensão física sem ordem judicial foi vetada pelo Presidente e o veto foi mantido pelo Congresso. Na prática, a instituição financeira ainda precisa de uma ordem judicial para fisicamente tomar o veículo.",
   },
   {
@@ -48,7 +48,7 @@ export function FAQSection() {
             className="text-4xl lg:text-5xl font-bold"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Perguntas que mais recebemos
+            As perguntas que mais recebemos, respondidas sem enrolação
           </h2>
         </div>
 

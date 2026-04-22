@@ -33,11 +33,11 @@ export function LegalRightsSection() {
             className="text-4xl lg:text-5xl font-bold mb-4"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Busca e apreensão não é o fim
+            Busca e apreensão não é sentença: é o começo da defesa
           </h2>
           <p className="text-foreground/60 max-w-xl mx-auto">
-            Existem fundamentos legais que muita gente desconhece - e que podem
-            mudar completamente o seu cenário.
+            Existem fundamentos legais que muita gente desconhece, e que os
+            bancos definitivamente não vão te contar.
           </p>
         </div>
 

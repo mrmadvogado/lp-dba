@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink, CheckCircle, Star } from "lucide-react";
 
 const reviews = [
@@ -6,7 +7,7 @@ const reviews = [
     author: "Gisele Maria",
   },
   {
-    text: "Meu carro estava bloqueado no DETRAN e eu não sabia o que fazer. O Dr. Marlon Rocha conseguiu o desbloqueio rápido e ainda revisou meu contrato!",
+    text: "Meu carro estava bloqueado no DETRAN e eu não sabia o que fazer. O escritório do Dr. Marlon conseguiu o desbloqueio rápido e ainda revisou meu contrato!",
     author: "Rômulo Alves",
   },
   {
@@ -25,18 +26,19 @@ export function AboutSection() {
           {/* Left: text */}
           <div className="space-y-6 reveal">
             <p className="text-xs font-semibold tracking-widest text-[#B8902A] uppercase">
-              Reconhecimento e confiança
+              Quem vai defender você
             </p>
             <h2
               className="text-4xl lg:text-5xl font-bold leading-tight"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
-              Defesa especializada em financiamento de veículos e desbloqueio
-              de bens
+              Especialista em busca e apreensão e em fazer os bancos cumprirem a lei
             </h2>
             <p className="text-foreground/60 leading-relaxed">
-              Foco total na defesa de dívidas de financiamento de veículo,
-              suspensão de busca e apreensão e desbloqueio de bens no RENAJUD.
+              Dr. Marlon Rocha atua exclusivamente na defesa dos clientes que
+              estão com seus veículos apreendidos ou ameaçados pelo banco, com
+              bloqueio via RENAJUD, busca e apreensão em andamento e revisão de
+              contratos com juros abusivos. Atendimento online.
             </p>
 
             {/* Stars */}
@@ -84,13 +86,19 @@ export function AboutSection() {
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
-                    MR
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-border flex items-center justify-center bg-white">
+                    <Image
+                      src="/images/logo-mrm.png"
+                      alt="MRM Advogados"
+                      width={40}
+                      height={40}
+                      className="object-contain w-full h-full p-1"
+                    />
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Dr. Marlon Rocha</p>
+                    <p className="font-semibold text-sm">MRM Advogados</p>
                     <p className="text-xs text-foreground/50">
-                      MRM Advogados
+                      Dr. Marlon Rocha
                     </p>
                   </div>
                 </div>
@@ -125,7 +133,7 @@ export function AboutSection() {
               {/* Badge */}
               <div className="mt-6 pt-4 border-t border-border/50">
                 <p className="text-xs font-semibold tracking-widest text-foreground/40 uppercase">
-                  Serviço especializado
+                  Avaliações verificadas · Google Reviews
                 </p>
               </div>
             </div>

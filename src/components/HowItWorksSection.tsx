@@ -38,11 +38,11 @@ export function HowItWorksSection() {
             className="text-4xl lg:text-5xl font-bold text-white mb-4"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Atendimento simples e direto
+            Três passos para defender seu veículo
           </h2>
           <p className="text-white/60 max-w-xl mx-auto">
-            Você não precisa ir a nenhum escritório. Resolvemos tudo de forma
-            remota.
+            Você fala diretamente com o Dr. Marlon Rocha. Atendemos todo o
+            Mato Grosso e o Brasil inteiro com agilidade e sigilo.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export function HowItWorksSection() {
             className="inline-flex items-center gap-2.5 bg-[rgb(37,211,102)] text-white font-semibold px-10 py-4 rounded-full text-lg hover:bg-[rgb(30,190,90)] transition-all shadow-[0_0_28px_rgba(37,211,102,0.55)] hover:shadow-[0_0_40px_rgba(37,211,102,0.75)]"
           >
             <MessageCircle className="w-5 h-5" />
-            Falar no WhatsApp
+            Quero Minha Avaliação Gratuita
           </a>
           <div className="flex items-center justify-center gap-3 text-sm text-white/50">
             <span className="flex items-center gap-1.5">
@@ -95,7 +95,7 @@ export function HowItWorksSection() {
               Atendimento sigiloso
             </span>
             <span>·</span>
-            <span>Transparência total</span>
+            <span>Sem deslocamento</span>
           </div>
         </div>
       </div>

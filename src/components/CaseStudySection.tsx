@@ -40,7 +40,7 @@ export function CaseStudySection() {
           </h2>
           <p className="text-foreground/60 max-w-xl mx-auto">
             Um caso real de defesa bem-sucedida contra busca e apreensão
-            indevida de veículo financiado em Santa Catarina.
+            indevida de veículo financiado em Mato Grosso.
           </p>
         </div>
 
