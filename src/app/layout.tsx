@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     images: ["/images/foto-marlon.png"],
   },
   icons: {
-    icon: "/images/miniatura.png",
-    apple: "/images/miniatura.png",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
