@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
   basePath: "/defesa-busca-apreensao",
   assetPrefix: "/defesa-busca-apreensao",
 };
