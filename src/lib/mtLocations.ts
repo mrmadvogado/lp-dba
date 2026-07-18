@@ -232,7 +232,7 @@ export const mtLocations: MtLocation[] = [
     context: [
       "Tangará da Serra é um dos principais municípios do médio-norte de Mato Grosso, com cerca de 104 mil habitantes no Censo 2022 do IBGE. O acesso à capital é feito pela MT-358 e rodovias integradas, em um trajeto de aproximadamente 240 km — distância que torna o atendimento digital a via mais rápida quando há mandado em circulação ou veículo já apreendido.",
       "A economia regional, fortemente ligada ao agronegócio, ao comércio e aos serviços, mantém circulação intensa de veículos financiados: caminhonetes de trabalho, utilitários de fazenda e carros de passeio. Quando um desses bens é apreendido, a rotina da família ou da atividade produtiva é atingida de imediato, e a resposta jurídica precisa partir da leitura do processo, não de promessas.",
-      "A MRM Advogados não possui unidade física em Tangará da Serra. A sede fica em Cuiabá e o atendimento na cidade é online, com transparência sobre endereço e registro profissional — sem filial artificial nem perfil empresarial duplicado.",
+      "Nos casos de busca e apreensão, o que consome o prazo é esperar: os 5 dias para pagamento integral e os 15 dias para defesa correm da data do cumprimento do mandado. Por isso o atendimento começa na hora pelo WhatsApp — com o número do processo ou a foto do mandado, a análise dos autos eletrônicos é iniciada sem depender de deslocamento ou agendamento presencial.",
     ],
     judicial: [
       {
@@ -249,9 +249,9 @@ export const mtLocations: MtLocation[] = [
       },
     ],
     localPoints: [
-      { title: "Médio-norte de MT", text: "Página dedicada a quem está em Tangará da Serra e municípios do entorno, com atendimento digital imediato." },
+      { title: "Comece agora pelo WhatsApp", text: "Envie o número do processo ou a foto do mandado e a análise é iniciada de imediato — o prazo não espera agendamento." },
       { title: "Veículo de trabalho", text: "Caminhonetes e utilitários ligados à atividade rural ou empresarial têm essa função considerada na análise do caso." },
-      { title: "Sem viagem inicial", text: "Consulta, envio de documentos e reunião por vídeo — a ida a Cuiabá só ocorre se for útil ao processo." },
+      { title: "Médio-norte de MT", text: "Atuação para quem está em Tangará da Serra e municípios do entorno, com acompanhamento direto pelo celular." },
     ],
     processNotes: [
       "Confirme a data em que o mandado foi cumprido em Tangará da Serra e, se possível, o número do processo.",
@@ -260,12 +260,12 @@ export const mtLocations: MtLocation[] = [
     ],
     faqs: [
       {
-        question: "A MRM Advogados tem escritório em Tangará da Serra?",
-        answer: "Não. A sede fica em Cuiabá e o atendimento em Tangará da Serra é online. Essa informação é mantida com transparência: não divulgamos endereço ou filial que não existe.",
+        question: "Como começa o atendimento para quem está em Tangará da Serra?",
+        answer: "Pelo WhatsApp, na hora: basta enviar o número do processo ou a foto do mandado. A análise dos autos eletrônicos começa sem deslocamento, e reunião por vídeo é marcada quando for útil ao caso.",
       },
       {
-        question: "O processo tramita na comarca de Tangará da Serra. Um advogado de Cuiabá pode atuar?",
-        answer: "Sim. As ações tramitam em meio eletrônico (PJe/TJMT), o que permite análise dos autos, peticionamento e acompanhamento à distância, observadas as regras de representação.",
+        question: "O advogado precisa ser de Tangará da Serra para atuar no meu processo?",
+        answer: "Não. As ações tramitam em meio eletrônico (PJe/TJMT), o que permite a advogado inscrito na OAB analisar os autos, peticionar e acompanhar o processo da comarca de Tangará da Serra integralmente, observadas as regras de representação.",
       },
       {
         question: "Meu veículo foi apreendido na estrada, fora da cidade. Isso muda a defesa?",
