@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { createCanvas, GlobalFonts } = require("@napi-rs/canvas");
 const fs = require("fs");
 const path = require("path");
@@ -59,7 +60,8 @@ function txt(str, x, y, font, size, color, align = "left", maxW) {
   ctx.font = `${size}px ${font}`;
   ctx.fillStyle = color;
   ctx.textAlign = align;
-  maxW ? ctx.fillText(str, x, y, maxW) : ctx.fillText(str, x, y);
+  if (maxW) ctx.fillText(str, x, y, maxW);
+  else ctx.fillText(str, x, y);
   ctx.textAlign = "left";
 }
 
@@ -69,17 +71,6 @@ function arrowV(x, y1, y2, color, lw = 2) {
   ctx.beginPath(); ctx.moveTo(x, y1); ctx.lineTo(x, y2 - 8); ctx.stroke();
   ctx.fillStyle = color;
   ctx.beginPath(); ctx.moveTo(x - 6, y2 - 8); ctx.lineTo(x + 6, y2 - 8); ctx.lineTo(x, y2); ctx.closePath(); ctx.fill();
-  ctx.restore();
-}
-
-function arrowH(x1, x2, y, color, lw = 2, dashed = false) {
-  ctx.save();
-  ctx.strokeStyle = color; ctx.lineWidth = lw;
-  ctx.setLineDash(dashed ? [5, 4] : []);
-  ctx.beginPath(); ctx.moveTo(x1, y); ctx.lineTo(x2 - 8, y); ctx.stroke();
-  ctx.setLineDash([]);
-  ctx.fillStyle = color;
-  ctx.beginPath(); ctx.moveTo(x2 - 8, y - 5); ctx.lineTo(x2 - 8, y + 5); ctx.lineTo(x2, y); ctx.closePath(); ctx.fill();
   ctx.restore();
 }
 
