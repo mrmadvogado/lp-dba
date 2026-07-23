@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import { JsonLd } from "@/components/JsonLd";
+import { LANDING_URL, SITE_URL } from "@/lib/constants";
+import { Analytics } from "@/components/Analytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,23 +16,29 @@ const poppins = Poppins({
   weight: ["600", "700", "800"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrmadvogado.com.br/defesa-busca-apreensao";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Veículo Bloqueado ou em Busca e Apreensão? Entenda Seus Direitos",
+  title: "Advogado para Busca e Apreensão de Veículo | MRM",
   description:
-    "Seu veículo foi bloqueado ou tomado pelo banco? Existem direitos que a financeira não te conta. Antes de desistir do seu bem, entenda o que a lei permite - com transparência.",
+    "Advogado para defesa em busca e apreensão de veículo. Atendimento online em todo o Brasil e presencial em Cuiabá. Solicite uma análise do seu caso.",
+  authors: [{ name: "Dr. Marlon Rocha", url: SITE_URL }],
+  category: "Direito Bancário",
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
-    canonical: "/",
+    canonical: LANDING_URL,
   },
   openGraph: {
     type: "website",
-    url: siteUrl,
+    url: LANDING_URL,
     siteName: "MRM Advogados",
-    title: "Veículo Bloqueado ou em Busca e Apreensão? Entenda Seus Direitos",
+    title: "Advogado para Busca e Apreensão de Veículo | MRM",
     description:
-      "Seu veículo foi bloqueado ou tomado pelo banco? Existem direitos que a financeira não te conta. Antes de desistir do seu bem, entenda o que a lei permite - com transparência.",
+      "Defesa em busca e apreensão de veículo com atendimento online em todo o Brasil e presencial em Cuiabá.",
     locale: "pt_BR",
     images: [
       {
@@ -44,14 +51,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Veículo Bloqueado ou em Busca e Apreensão? Entenda Seus Direitos",
+    title: "Advogado para Busca e Apreensão de Veículo | MRM",
     description:
-      "Seu veículo foi bloqueado ou tomado pelo banco? Existem direitos que a financeira não te conta. Antes de desistir do seu bem, entenda o que a lei permite - com transparência.",
+      "Defesa em busca e apreensão de veículo com atendimento online em todo o Brasil e presencial em Cuiabá.",
     images: ["/images/foto-marlon.png"],
-  },
-  icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
   },
 };
 
@@ -66,7 +69,7 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <JsonLd />
+        <Analytics />
         {children}
       </body>
     </html>

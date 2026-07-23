@@ -38,6 +38,9 @@ next-env.d.ts
 # Vercel
 .vercel
 
+# Relatórios locais de auditoria (não pertencem ao código publicado)
+mrmadvogado.com.br-defesa-busca-apreensao2-audit/
+
 # Local settings (not project config)
 .claude/settings.local.json
 

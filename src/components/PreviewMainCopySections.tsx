@@ -48,7 +48,11 @@ export function PreviewMainHeroSection({
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-32 pb-12 lg:pt-40 lg:pb-24 overflow-hidden"
+      className={`relative flex items-center overflow-hidden ${
+        heroImageLandscape
+          ? "pb-8 pt-32 lg:pb-10 lg:pt-36"
+          : "min-h-screen pb-12 pt-32 lg:pb-24 lg:pt-40"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className={`grid items-center gap-12 ${heroImageLandscape ? "lg:grid-cols-[0.82fr_1.18fr] lg:gap-10" : "lg:grid-cols-2 lg:gap-16"}`}>
@@ -260,8 +264,8 @@ export function PreviewInstitutionalReviewsSection() {
               </p>
               <p>
                 À frente do escritório, o Dr. Marlon Rocha ({OAB}) é pós-graduado em Direito Bancário
-                e membro da Comissão de Direito Bancário da OAB/MT, o que garante atuação técnica
-                atualizada e defesa fundamentada em cada caso.
+                e membro da Comissão de Direito Bancário da OAB/MT, contribuindo para uma atuação
+                técnica atualizada e uma defesa fundamentada em cada caso.
               </p>
             </div>
 
@@ -289,27 +293,27 @@ export function PreviewInstitutionalReviewsSection() {
 
           </div>
 
-          <div className="reveal h-full">
-            <div className="group relative h-full min-h-[560px] overflow-hidden rounded-3xl border border-border/20 bg-primary shadow-2xl">
-              <div className="absolute inset-0 overflow-hidden bg-primary">
+          <div className="reveal flex h-full items-end justify-end">
+            <div className="group relative aspect-[36/41] w-full max-w-[560px] overflow-hidden rounded-3xl border border-border/20 bg-transparent shadow-2xl">
+              <div className="absolute inset-0 overflow-hidden">
                 <Image
                   src="/images/foto-marlon.png"
                   alt="Dr. Marlon Rocha, advogado especialista em Direito Bancário"
                   fill
                   sizes="(max-width: 1024px) 100vw, 640px"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary via-primary/90 to-transparent px-6 pb-4 pt-20 text-white">
-                  <p className="text-xl font-semibold text-white">Dr. Marlon Rocha</p>
-                  <p className="mt-0.5 text-xs text-white/75">{OAB}</p>
-                  <div className="mt-3 grid max-w-[360px] grid-cols-2 gap-3 border-t border-white/25 pt-3">
-                    <div className="border-l-2 border-[#D4AA40] pl-2.5">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary via-primary/90 to-transparent px-6 pb-3 pt-14 text-white">
+                  <p className="text-lg font-semibold leading-tight text-white">Dr. Marlon Rocha</p>
+                  <p className="mt-0.5 text-[11px] text-white/70">{OAB}</p>
+                  <div className="mt-2 grid w-full grid-cols-2 gap-8 border-t border-white/20 pt-2">
+                    <div className="border-l border-[#D4AA40] pl-2.5">
                       <p className="text-sm font-semibold leading-tight text-white">Membro</p>
-                      <p className="mt-0.5 text-[10px] leading-snug text-white/70">Comissão de Direito Bancário - OAB</p>
+                      <p className="mt-0.5 text-[10px] leading-tight text-white/70 sm:whitespace-nowrap">Comissão de Direito Bancário - OAB</p>
                     </div>
-                    <div className="border-l-2 border-[#D4AA40] pl-2.5">
+                    <div className="border-l border-[#D4AA40] pl-2.5">
                       <p className="text-sm font-semibold leading-tight text-white">Especialista</p>
-                      <p className="mt-0.5 text-[10px] leading-snug text-white/70">Direito Bancário</p>
+                      <p className="mt-0.5 text-[10px] leading-tight text-white/70">Direito Bancário</p>
                     </div>
                   </div>
                 </div>

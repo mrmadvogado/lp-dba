@@ -72,61 +72,6 @@ export default function DefesaBuscaApreensao2Page() {
         <PreviewServicesSection basePath="/defesa-busca-apreensao" imageOrigin={lpAssetOrigin} />
         <PreviewInstitutionalReviewsSection />
         <HowItWorksSection variant="preview-copy" />
-        <section className="border-y border-border/50 bg-white py-16" aria-labelledby="orientacao-imediata">
-          <div className="mx-auto max-w-6xl px-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#806315]">
-              Orientação inicial
-            </p>
-            <h2
-              id="orientacao-imediata"
-              className="mt-3 max-w-3xl text-3xl font-bold leading-tight lg:text-4xl"
-              style={{ fontFamily: "var(--font-poppins)" }}
-            >
-              O que fazer após a apreensão do veículo?
-            </h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <article className="rounded-2xl border border-border/60 bg-background p-6">
-                <h3 className="text-xl font-bold">Observe os prazos e busque análise imediata</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/70">
-                  Após a execução da liminar, a legislação prevê cinco dias para o pagamento da
-                  integralidade da dívida apresentada pelo banco e quinze dias para apresentação da
-                  resposta no processo. Contrato, notificação e andamento judicial precisam ser
-                  analisados em conjunto, pois a medida adequada depende dos documentos e da fase do
-                  caso. O primeiro passo é confirmar a data da apreensão e obter os dados do processo.
-                </p>
-                <a
-                  href="https://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del0911compilado.htm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex text-sm font-semibold text-primary underline underline-offset-4"
-                >
-                  Consultar o Decreto-Lei 911/69
-                </a>
-              </article>
-              <article className="rounded-2xl border border-border/60 bg-background p-6">
-                <h3 className="text-xl font-bold">Ainda é possível buscar a devolução do veículo?</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/70">
-                  A apreensão não encerra automaticamente a possibilidade de defesa. Dependendo do
-                  caso, podem ser examinados o envio da notificação ao endereço informado no contrato,
-                  a comprovação da mora, as cláusulas do financiamento e a regularidade dos atos do
-                  processo. A devolução do veículo depende dos fundamentos encontrados e de decisão
-                  judicial; por isso, nenhum resultado pode ser definido sem análise individual.
-                </p>
-                <a
-                  href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&num_processo_classe=1951888&sg_classe=REsp&tipo_pesquisa=T"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex text-sm font-semibold text-primary underline underline-offset-4"
-                >
-                  Consultar precedente qualificado do STJ
-                </a>
-              </article>
-            </div>
-            <p className="mt-6 text-xs text-foreground/65">
-              Conteúdo revisado por Dr. Marlon Rocha, OAB/MT 35.470, em 18 de julho de 2026.
-            </p>
-          </div>
-        </section>
         <CaseStudySection waUrl={PREVIEW_WA_URL} variant="preview-copy" />
         <DiagnosticSection variant="preview-copy" />
         <FAQSection compact />
@@ -176,35 +121,6 @@ export default function DefesaBuscaApreensao2Page() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-            </div>
-          </div>
-        </section>
-        <section className="border-b border-border/50 bg-white py-14" aria-labelledby="atendimento-mato-grosso">
-          <div className="mx-auto max-w-5xl px-4">
-            <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-              <div className="max-w-3xl">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#806315]">Atendimento local</p>
-                <h2 id="atendimento-mato-grosso" className="mt-3 text-3xl font-bold" style={{ fontFamily: "var(--font-poppins)" }}>
-                  Defesa em busca e apreensão em Mato Grosso
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/65">
-                  Sede em Cuiabá e atendimento online em cidades priorizadas do estado, com páginas próprias e informações transparentes sobre a modalidade de atendimento.
-                </p>
-              </div>
-              <Link href="/defesa-busca-apreensao/mato-grosso" className="inline-flex shrink-0 items-center gap-2 font-semibold text-primary hover:underline">
-                Ver cidades atendidas <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                ["Cuiabá", "cuiaba"], ["Sinop", "sinop"], ["Rondonópolis", "rondonopolis"],
-                ["Várzea Grande", "varzea-grande"], ["Lucas do Rio Verde", "lucas-do-rio-verde"],
-                ["Primavera do Leste", "primavera-do-leste"], ["Sorriso", "sorriso"],
-              ].map(([city, slug]) => (
-                <Link key={slug} href={`/defesa-busca-apreensao/mato-grosso/${slug}`} className="rounded-full border border-border/60 bg-background px-4 py-2 text-sm font-medium text-foreground/70 transition hover:border-primary hover:text-primary">
-                  {city}
-                </Link>
-              ))}
             </div>
           </div>
         </section>

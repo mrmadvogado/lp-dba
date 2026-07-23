@@ -1,13 +1,26 @@
 import { MessageCircle } from "lucide-react";
+import { PUBLIC_WA_URL } from "@/lib/constants";
 
-const WA_URL =
-  "https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
+type CTASectionProps = {
+  buttonLabel?: string;
+  description?: string | null;
+  variant?: "default" | "preview-copy";
+  waUrl?: string;
+};
 
-export function CTASection() {
+const DEFAULT_DESCRIPTION =
+  "Fale agora com o Dr. Marlon Rocha. Avaliação gratuita, atendimento sigiloso e análise técnica do seu contrato, notificação e processo. Descubra o que é possível fazer antes que os prazos se fechem.";
+
+export function CTASection({
+  buttonLabel = "Avaliar Meu Caso Agora, Gratuitamente",
+  description = DEFAULT_DESCRIPTION,
+  variant = "default",
+  waUrl = PUBLIC_WA_URL,
+}: CTASectionProps = {}) {
   return (
     <section
       id="contato"
-      className="py-24"
+      className={variant === "preview-copy" ? "py-16" : "py-24"}
       style={{ backgroundColor: "rgb(27,45,79)" }}
     >
       <div className="max-w-3xl mx-auto px-4 text-center reveal">
@@ -21,20 +34,20 @@ export function CTASection() {
           Seu veículo tem defesa.
           <br />Mas o prazo não espera.
         </h2>
-        <p className="text-white/60 mb-10 max-w-xl mx-auto leading-relaxed">
-          Fale agora com o Dr. Marlon Rocha. Avaliação gratuita, atendimento
-          sigiloso e análise técnica do seu contrato, notificação e processo.
-          Descubra o que é possível fazer antes que os prazos se fechem.
-        </p>
+        {description && (
+          <p className="text-white/60 mb-10 max-w-xl mx-auto leading-relaxed">
+            {description}
+          </p>
+        )}
 
         <a
-          href={WA_URL}
+          href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-[rgb(37,211,102)] text-white font-bold px-10 py-5 rounded-full text-lg hover:bg-[rgb(30,190,90)] transition-all shadow-[0_0_28px_rgba(37,211,102,0.55)] hover:shadow-[0_0_40px_rgba(37,211,102,0.75)] uppercase tracking-wide"
+          className="inline-flex items-center gap-3 bg-[#0F7A32] text-white font-bold px-10 py-5 rounded-full text-lg hover:bg-[#0C6429] transition-all shadow-[0_0_28px_rgba(15,122,50,0.35)] hover:shadow-[0_0_36px_rgba(15,122,50,0.45)] uppercase tracking-wide"
         >
           <MessageCircle className="w-6 h-6" />
-          Avaliar Meu Caso Agora, Gratuitamente
+          {buttonLabel}
         </a>
 
       </div>

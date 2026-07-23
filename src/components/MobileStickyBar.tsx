@@ -3,10 +3,18 @@
 import { MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const WA_URL =
-  "https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
+const DEFAULT_WA_URL =
+  "https://wa.me/5565992618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
 
-export function MobileStickyBar() {
+type MobileStickyBarProps = {
+  waUrl?: string;
+  label?: string;
+};
+
+export function MobileStickyBar({
+  waUrl = DEFAULT_WA_URL,
+  label = "Avaliar Meu Caso Agora, Gratuitamente",
+}: MobileStickyBarProps = {}) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -22,13 +30,13 @@ export function MobileStickyBar() {
       style={{ backgroundColor: "rgb(27,45,79)" }}
     >
       <a
-        href={WA_URL}
+        href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center gap-2.5 w-full bg-[rgb(37,211,102)] text-white font-semibold py-3.5 rounded-xl text-sm shadow-[0_0_20px_rgba(37,211,102,0.5)]"
       >
         <MessageCircle className="w-5 h-5" />
-        Avaliar Meu Caso Agora, Gratuitamente
+        {label}
       </a>
     </div>
   );

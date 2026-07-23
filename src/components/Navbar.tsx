@@ -4,8 +4,8 @@ import Image from "next/image";
 import { Shield, MessageCircle, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const WA_URL =
-  "https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
+const DEFAULT_WA_URL =
+  "https://wa.me/5565992618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
 
 const navLinks = [
   { label: "O Problema", id: "dores" },
@@ -20,7 +20,20 @@ function scrollTo(id: string) {
   if (el) el.scrollIntoView({ behavior: "smooth" });
 }
 
-export function Navbar() {
+function reloadCurrentPageFromTop() {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
+  window.location.reload();
+}
+
+type NavbarProps = {
+  waUrl?: string;
+  ctaLabel?: string;
+};
+
+export function Navbar({ waUrl = DEFAULT_WA_URL, ctaLabel = "Falar agora no WhatsApp" }: NavbarProps = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -38,19 +51,21 @@ export function Navbar() {
           : "bg-background/90"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-4 sm:gap-6">
         {/* Logo — recarrega a página no topo */}
         <button
-          onClick={() => window.location.reload()}
+          type="button"
+          onClick={reloadCurrentPageFromTop}
           className="flex items-center shrink-0"
-          aria-label="MRM Advogados - Início"
+          aria-label="MRM Advogados - recarregar página"
+          title="Recarregar página"
         >
           <Image
             src="/images/logo-mrm.png"
             alt="MRM Advogados"
-            width={240}
-            height={51}
-            className="h-14 w-auto"
+            width={444}
+            height={224}
+            className="h-12 sm:h-14 w-auto"
             priority
           />
         </button>
@@ -75,21 +90,21 @@ export function Navbar() {
             <span>OAB/MT 35.470</span>
           </div>
           <a
-            href={WA_URL}
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-grow items-center gap-2 bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-primary/90"
           >
             <MessageCircle className="w-4 h-4" />
-            Falar agora no WhatsApp
+            {ctaLabel}
           </a>
         </div>
 
         {/* Mobile: hamburger */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className="lg:hidden p-2 rounded-lg text-foreground/70 hover:text-foreground transition-colors"
-          aria-label="Menu"
+          className="lg:hidden p-2.5 rounded-lg border border-border/60 bg-white/70 text-foreground hover:text-foreground transition-colors shrink-0"
+          aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -108,14 +123,14 @@ export function Navbar() {
             </button>
           ))}
           <a
-            href={WA_URL}
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="mt-3 flex items-center justify-center gap-2 bg-primary text-white text-sm font-medium px-4 py-3 rounded-xl"
           >
             <MessageCircle className="w-4 h-4" />
-            Falar agora no WhatsApp
+            {ctaLabel}
           </a>
         </div>
       )}

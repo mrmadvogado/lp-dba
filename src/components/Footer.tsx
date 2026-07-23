@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, MessageCircle } from "lucide-react";
 import { ADDRESS, CNPJ, GOOGLE_BUSINESS_URL, SITE_URL, SOCIAL, SOCIETY_OAB } from "@/lib/constants";
+import { CookiePreferencesButton } from "@/components/CookiePreferencesButton";
 
 type FooterProps = {
   variant?: "default" | "preview-copy";
@@ -139,11 +140,12 @@ function PreviewCopyFooter({ waUrl, basePath }: { waUrl: string; basePath: strin
           </p>
         </div>
 
-        <div className="mt-5 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-5 text-xs text-white/65 sm:flex-row">
+        <div className="mt-5 flex flex-col items-center justify-between gap-3 border-t border-white/10 pb-20 pt-5 text-xs text-white/65 sm:flex-row sm:pb-0 sm:pr-52">
           <p>Copyright © 2026 MRM ADVOGADOS. Todos os direitos reservados.</p>
           <Link href="/politica-de-privacidade" className="transition hover:text-white/70">
             Política de Privacidade
           </Link>
+          <CookiePreferencesButton className="transition hover:text-white/70" />
         </div>
       </div>
     </footer>
@@ -178,7 +180,10 @@ function DefaultFooter() {
 
         <div className="mt-6 flex flex-col items-center justify-between gap-3 border-t border-border/50 pt-5 text-xs text-foreground/45 sm:flex-row">
           <p>Copyright © 2026 MRM ADVOGADOS. Todos os direitos reservados.</p>
-          <Link href="/politica-de-privacidade" className="hover:text-foreground/70 transition-colors underline underline-offset-2">Política de Privacidade</Link>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link href="/politica-de-privacidade" className="hover:text-foreground/70 transition-colors underline underline-offset-2">Política de Privacidade</Link>
+            <CookiePreferencesButton className="hover:text-foreground/70 transition-colors underline underline-offset-2" />
+          </div>
         </div>
       </div>
     </footer>

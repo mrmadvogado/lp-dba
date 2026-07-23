@@ -18,7 +18,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { RevealObserver } from "@/components/RevealObserver";
 import { ADDRESS, CNPJ, LEGAL_NAME, OAB, PHONE, SITE_URL, SOCIETY_OAB } from "@/lib/constants";
 import { PUBLIC_FAQS } from "@/lib/faq";
-import { getMtLocation, type MtLocation } from "@/lib/mtLocations";
+import type { MtLocation } from "@/lib/mtLocations";
 
 const basePath = "/defesa-busca-apreensao";
 const assetOrigin = `${SITE_URL}/defesa-busca-apreensao-assets`;
@@ -28,8 +28,24 @@ function getCityWaUrl(city: string) {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
 }
 
+function getLocationFaqs(city: string) {
+  return [
+    {
+      question: `A busca e apreensão de veículo em ${city} segue as mesmas regras do restante do país?`,
+      answer:
+        "Sim. O procedimento é regido por legislação federal. Cada processo, porém, deve ser analisado individualmente, considerando o contrato, a notificação, a decisão judicial, os atos de apreensão e os prazos aplicáveis.",
+    },
+    {
+      question: `Quais pontos podem ser analisados em uma busca e apreensão em ${city}?`,
+      answer:
+        "Podem ser examinados a regularidade da notificação, a constituição em mora, os encargos e as cláusulas do financiamento, a decisão judicial e os demais atos do processo. A estratégia jurídica depende das circunstâncias de cada caso.",
+    },
+  ];
+}
+
 function LocationJsonLd({ location }: { location: MtLocation }) {
   const url = `${SITE_URL}${basePath}/mato-grosso/${location.slug}`;
+  const faqs = [...getLocationFaqs(location.city), ...PUBLIC_FAQS];
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -86,7 +102,7 @@ function LocationJsonLd({ location }: { location: MtLocation }) {
       },
       {
         "@type": "FAQPage",
-        mainEntity: [...location.faqs, ...PUBLIC_FAQS].map((faq) => ({
+        mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,
           acceptedAnswer: { "@type": "Answer", text: faq.answer },
@@ -100,6 +116,7 @@ function LocationJsonLd({ location }: { location: MtLocation }) {
 
 export function LocationLandingPage({ location }: { location: MtLocation }) {
   const waUrl = getCityWaUrl(location.city);
+  const faqs = [...getLocationFaqs(location.city), ...PUBLIC_FAQS];
   const heroTitle = `Advogado Busca e Apreensão de Veículo em ${location.city}`;
   const useTrackerHero = location.slug === "sinop";
   const displayedContext = location.slug === "sinop"
@@ -170,31 +187,6 @@ export function LocationLandingPage({ location }: { location: MtLocation }) {
                   </div>
                 </div>
               )}
-
-              <div className="reveal mt-12 grid gap-8 lg:grid-cols-2">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-[#806315]">Atendimento local</p>
-                  <ul className="mt-4 space-y-4">
-                    {location.localPoints.map((point) => (
-                      <li key={point.title} className="rounded-xl border border-border/50 bg-background p-4">
-                        <p className="font-semibold">{point.title}</p>
-                        <p className="mt-1 text-sm leading-relaxed text-foreground/70">{point.text}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-[#806315]">Antes do primeiro contato</p>
-                  <ul className="mt-4 space-y-3">
-                    {location.processNotes.map((note) => (
-                      <li key={note} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/75">
-                        <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#806315]" aria-hidden />
-                        {note}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -227,30 +219,7 @@ export function LocationLandingPage({ location }: { location: MtLocation }) {
 
         <CaseStudySection waUrl={waUrl} variant="preview-copy" />
         <DiagnosticSection variant="preview-copy" waUrl={waUrl} />
-        <FAQSection compact items={[...location.faqs, ...PUBLIC_FAQS]} />
-
-        {location.nearby.length > 0 && (
-          <section className="border-t border-border/50 bg-white py-10" aria-label="Atendimento na região">
-            <div className="mx-auto max-w-5xl px-4 text-center">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#806315]">Atendimento na região</p>
-              <div className="mt-4 flex flex-wrap justify-center gap-3">
-                {location.nearby.map((slug) => {
-                  const neighbor = getMtLocation(slug);
-                  if (!neighbor) return null;
-                  return (
-                    <a
-                      key={slug}
-                      href={`${basePath}/mato-grosso/${slug}`}
-                      className="rounded-full border border-border/60 px-4 py-2 text-sm font-semibold text-foreground/70 transition-colors hover:border-[#806315] hover:text-[#806315]"
-                    >
-                      {neighbor.city}
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-        )}
+        <FAQSection compact items={faqs} />
 
         <CTASection
           buttonLabel="Consultar Especialista"

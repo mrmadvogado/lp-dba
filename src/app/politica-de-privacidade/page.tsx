@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ADDRESS, CNPJ, LEGAL_NAME, SOCIETY_OAB } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade | MRM Advogados",
@@ -25,7 +26,7 @@ export default function PoliticaDePrivacidade() {
         Política de Privacidade
       </h1>
       <p className="text-sm text-foreground/50 mb-10">
-        Última atualização: 19 de abril de 2026
+        Última atualização: 21 de julho de 2026
       </p>
 
       <div className="prose prose-sm max-w-none space-y-8 text-foreground/80 leading-relaxed">
@@ -33,20 +34,21 @@ export default function PoliticaDePrivacidade() {
         <section>
           <h2 className="text-xl font-bold text-foreground mb-3">1. Quem somos</h2>
           <p>
-            Este site é operado por <strong>MRM Advogados</strong>, escritório
-            de advocacia inscrito sob a OAB/MT nº 35.470, com sede em Mato
-            Grosso, Brasil, doravante denominado <em>Controlador</em> para fins
-            da Lei Geral de Proteção de Dados (LGPD – Lei nº 13.709/2018).
+            Este site é operado por <strong>MRM Advogados</strong>, nome utilizado por {LEGAL_NAME},
+            inscrita no CNPJ sob nº {CNPJ} e registrada na OAB/MT sob nº {SOCIETY_OAB.replace("OAB/MT ", "")},
+            com sede na {ADDRESS.streetAddress}, bairro {ADDRESS.neighborhood}, {ADDRESS.city}-{ADDRESS.state},
+            CEP {ADDRESS.postalCode}, doravante denominada <em>Controladora</em> para fins da Lei Geral
+            de Proteção de Dados (LGPD – Lei nº 13.709/2018).
           </p>
           <p className="mt-2">
             Contato do encarregado de dados:{" "}
             <a
-              href="https://wa.me/556592618251"
+              href="https://wa.me/5565992618251"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary underline"
             >
-              WhatsApp: (65) 9261-8251
+              WhatsApp: (65) 99261-8251
             </a>
           </p>
         </section>
@@ -143,12 +145,12 @@ export default function PoliticaDePrivacidade() {
           <p className="mt-2">
             Para exercer qualquer um desses direitos, entre em contato pelo{" "}
             <a
-              href="https://wa.me/556592618251"
+              href="https://wa.me/5565992618251"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary underline"
             >
-              WhatsApp: (65) 9261-8251
+              WhatsApp: (65) 99261-8251
             </a>
             . Responderemos em até 15 dias úteis.
           </p>
@@ -167,9 +169,11 @@ export default function PoliticaDePrivacidade() {
         <section>
           <h2 className="text-xl font-bold text-foreground mb-3">9. Cookies</h2>
           <p>
-            Este site pode utilizar cookies para análise de tráfego (ex.: Google
-            Analytics). Você pode configurar seu navegador para recusar cookies;
-            isso não afetará o acesso ao conteúdo do site.
+            Cookies e armazenamento necessários mantêm segurança e preferências. O Google Analytics
+            e tecnologias de publicidade permanecem desativados até sua escolha no banner. Você pode
+            recusar, aceitar ou configurar separadamente audiência e publicidade, além de alterar a
+            decisão a qualquer momento em “Preferências de cookies”, no rodapé. Não enviamos a essas
+            ferramentas o conteúdo da mensagem, documentos, banco, processo ou detalhes do caso.
           </p>
         </section>
 
@@ -195,12 +199,12 @@ export default function PoliticaDePrivacidade() {
             <li>
               <strong>WhatsApp:</strong>{" "}
               <a
-                href="https://wa.me/556592618251"
+                href="https://wa.me/5565992618251"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary underline"
               >
-                (65) 9261-8251
+                (65) 99261-8251
               </a>
             </li>
             <li>

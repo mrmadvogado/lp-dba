@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
-
-const WA_URL =
-  "https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
+import { PUBLIC_WA_URL } from "@/lib/constants";
 
 const questions = [
   "O banco está ameaçando a busca e apreensão do seu veículo?",
@@ -16,7 +14,13 @@ const questions = [
   "Você deseja proteger seu bem e regularizar sua situação financeira?",
 ];
 
-export function DiagnosticSection() {
+type DiagnosticSectionProps = {
+  variant?: "default" | "preview-copy";
+  waUrl?: string;
+};
+
+export function DiagnosticSection({ variant = "default", waUrl = PUBLIC_WA_URL }: DiagnosticSectionProps = {}) {
+  const isPreviewCopy = variant === "preview-copy";
   const [checked, setChecked] = useState<boolean[]>(
     new Array(questions.length).fill(false)
   );
@@ -32,11 +36,11 @@ export function DiagnosticSection() {
   };
 
   return (
-    <section id="checklist" className="py-20 bg-background">
+    <section id="checklist" className={`${isPreviewCopy ? "pt-14 pb-8" : "py-20"} bg-background`}>
       <div className="max-w-3xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10 reveal">
-          <p className="text-xs font-semibold tracking-widest text-[#B8902A] uppercase mb-4">
+          <p className="text-xs font-semibold tracking-widest text-[#806315] uppercase mb-4">
             Diagnóstico rápido
           </p>
           <h2
@@ -46,14 +50,14 @@ export function DiagnosticSection() {
             Seu caso pode ter defesa: descubra agora
           </h2>
           <p className="text-foreground/60">
-            Marque as situações que se aplicam ao seu caso. Se você marcar 2 ou
-            mais, há fundamentos que precisam ser analisados com urgência.
+            Marque as situações que se aplicam ao seu caso.
+            {!isPreviewCopy && " Se você marcar 2 ou mais, há fundamentos que precisam ser analisados com urgência."}
           </p>
         </div>
 
         {/* Progress bar */}
         <div className="reveal mb-4">
-          <div className="flex items-center justify-between text-xs text-foreground/50 mb-1.5">
+          <div className="flex items-center justify-between text-xs text-foreground/65 mb-1.5">
             <span>Seu progresso</span>
             <span>{count}/{questions.length} itens</span>
           </div>
@@ -95,7 +99,7 @@ export function DiagnosticSection() {
 
           {/* Counter */}
           <div className="px-6 py-4 bg-background/50 border-t border-border/50 flex items-center justify-between">
-            <span className="text-sm text-foreground/50">
+            <span className="text-sm text-foreground/65">
               Itens marcados
             </span>
             <span className="text-sm font-bold text-primary">
@@ -107,7 +111,7 @@ export function DiagnosticSection() {
         {/* Feedback por número de itens marcados */}
         {count === 0 && (
           <div className="mt-6 text-center">
-            <p className="text-sm text-foreground/50">
+            <p className="text-sm text-foreground/65">
               Marque as situações que se aplicam ao seu caso para receber uma orientação.
             </p>
           </div>
@@ -116,10 +120,20 @@ export function DiagnosticSection() {
         {count === 1 && (
           <div className="mt-6 text-center">
             <p className="text-sm text-foreground/60">
-              Você marcou <strong>1 item</strong>. Mesmo um único ponto pode ter implicações jurídicas. Se tiver dúvida, vale conversar.
+              {isPreviewCopy ? (
+                <>
+                  Você marcou <strong>1 item</strong>. Esse ponto pode ser suficiente para justificar
+                  uma análise jurídica do seu caso. Se houver dúvida, vale conversar com um especialista.
+                </>
+              ) : (
+                <>
+                  Você marcou <strong>1 item</strong>. Mesmo um único ponto pode ter implicações
+                  jurídicas. Se tiver dúvida, vale conversar.
+                </>
+              )}
             </p>
             <a
-              href={WA_URL}
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
@@ -138,13 +152,13 @@ export function DiagnosticSection() {
               é um prazo que se fecha.
             </p>
             <a
-              href={WA_URL}
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-[rgb(37,211,102)] text-white font-semibold px-8 py-4 rounded-full hover:bg-[rgb(30,190,90)] transition-all shadow-[0_0_28px_rgba(37,211,102,0.55)] hover:shadow-[0_0_40px_rgba(37,211,102,0.75)]"
+              className="inline-flex items-center gap-2.5 bg-[#0F7A32] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#0C6429] transition-all shadow-[0_0_28px_rgba(15,122,50,0.35)] hover:shadow-[0_0_36px_rgba(15,122,50,0.45)]"
             >
               <MessageCircle className="w-5 h-5" />
-              Quero Defender Meu Veículo Agora
+              Consultar Especialista
             </a>
           </div>
         )}

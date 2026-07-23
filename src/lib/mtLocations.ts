@@ -25,9 +25,9 @@ export const mtLocations: MtLocation[] = [
     description: "Defesa em busca e apreensão de veículo em Cuiabá, com análise de contrato, notificação, liminar e prazos.",
     lead: "Seu veículo foi apreendido em Cuiabá ou existe risco de busca e apreensão? Entenda as opções jurídicas aplicáveis ao caso e os prazos relevantes.",
     context: [
-      "Cuiabá é a capital de Mato Grosso e concentra a sede do Tribunal de Justiça do estado, além de varas e unidades judiciárias que processam demandas bancárias. A localização física do escritório permite combinar atendimento digital com reunião presencial quando isso for útil ao caso.",
-      "A retirada do veículo pode ocorrer em residência, trabalho, estacionamento ou via pública, conforme a ordem judicial. A prioridade é identificar o processo e a data da apreensão, não reunir uma lista extensa de documentos antes do primeiro contato.",
-      "A MRM Advogados está na Rua Estevão de Mendonça, 471, Sala 14, bairro Popular, Cuiabá. Este é o único endereço divulgado como sede e corresponde aos dados institucionais do escritório.",
+      "Cuiabá tem população estimada de 691.875 habitantes em 2025, segundo o IBGE, e, como capital de Mato Grosso, exerce papel central na atividade econômica e institucional do estado.",
+      "O município registrou PIB per capita de R$ 59.997,13 em 2023 e receitas brutas realizadas superiores a R$ 4,31 bilhões em 2024. Essa relevância econômica amplia o volume de operações de crédito, financiamentos de veículos e outros contratos bancários.",
+      "A intensa circulação de crédito também aumenta a exposição de consumidores e empresas a contratos complexos e a possíveis cobranças abusivas por bancos e financeiras. Nos financiamentos de veículos, a análise da notificação, da constituição em mora, das taxas cobradas e dos atos do processo pode revelar fundamentos relevantes para a defesa.",
     ],
     localPoints: [
       { title: "Sede em Cuiabá", text: "Atendimento na Rua Estevão de Mendonça, bairro Popular, com agendamento prévio." },

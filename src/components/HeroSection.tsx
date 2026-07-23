@@ -2,7 +2,7 @@ import Image from "next/image";
 import { MessageCircle, ArrowRight, Scale } from "lucide-react";
 
 const WA_URL =
-  "https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
+  "https://wa.me/5565992618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
 
 export function HeroSection() {
   return (
@@ -18,7 +18,7 @@ export function HeroSection() {
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest text-[#B8902A] uppercase">
                 <span className="w-1 h-1 rounded-full bg-[#B8902A] inline-block" />
-                Direito do Consumidor · Financiamentos
+                Advogado em Direito Bancário · Atendimento Nacional
               </span>
               <span className="inline-flex items-center gap-1.5 bg-white border border-border text-foreground/70 text-xs font-medium px-3 py-1.5 rounded-full">
                 <Scale className="w-3.5 h-3.5" />
@@ -31,14 +31,14 @@ export function HeroSection() {
               className="text-5xl lg:text-[72px] font-bold leading-none tracking-tight"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
-              Seu veículo foi bloqueado ou tomado pelo banco?
+              Advogado para defesa em busca e apreensão de veículo
             </h1>
 
             {/* Subtext */}
             <p className="text-base lg:text-lg text-foreground/70 leading-relaxed max-w-lg">
-              Há brechas legais que os bancos torcem para você não conhecer, e
-              que podem suspender a ação, devolver seu carro e renegociar sua
-              dívida nos termos da lei.
+              Seu veículo foi bloqueado ou apreendido pelo banco? Entenda as
+              opções jurídicas aplicáveis ao seu caso e os prazos que precisam
+              ser observados.
             </p>
 
             {/* Warning line */}

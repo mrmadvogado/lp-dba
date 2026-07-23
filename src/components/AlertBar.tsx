@@ -1,15 +1,17 @@
+import { PUBLIC_WA_URL } from "@/lib/constants";
+
 export function AlertBar() {
   return (
     <div className="w-full py-3 px-4 border-b" style={{ backgroundColor: "rgb(27,45,79)", borderColor: "rgba(255,255,255,0.1)" }}>
-      <p className="text-center text-sm font-medium" style={{ color: "#D4AA40" }}>
-        ⚠️ <strong>Atenção:</strong> Após a apreensão do veículo, você tem <strong>5 dias</strong> para agir.{" "}
+      <p className="text-center text-sm font-medium" style={{ color: "#F1D27A" }}>
+        ⚠️ <strong>Atenção:</strong> após a apreensão, a lei prevê <strong>5 dias para pagamento integral</strong> e <strong>15 dias para defesa</strong>.{" "}
         <a
-          href="https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos."
+          href={PUBLIC_WA_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="underline cursor-pointer hover:opacity-80 transition-opacity"
         >
-          Não perca esse prazo.
+          Consulte seu caso com urgência.
         </a>
       </p>
     </div>

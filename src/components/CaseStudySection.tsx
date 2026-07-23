@@ -1,4 +1,5 @@
 import { Scale, CheckCircle, ExternalLink } from "lucide-react";
+import { PUBLIC_WA_URL } from "@/lib/constants";
 
 const processDetails = [
   { label: "Tribunal", value: "TJMT - Cuiabá" },
@@ -9,6 +10,16 @@ const processDetails = [
   { label: "Atendimento", value: "Online • Todo o Brasil" },
 ];
 
+const previewProcessDetails = [
+  { label: "Tribunal", value: "TJMT - Cuiabá" },
+  { label: "Processo", value: "Processo sob Sigilo" },
+  { label: "Período", value: "2026" },
+  { label: "Tipo de Dívida", value: "Financiamento de Veículo - Alienação Fiduciária" },
+  { label: "Pontos analisados", value: "Notificação, contrato e atos do processo" },
+  { label: "Situação Inicial", value: "Busca e apreensão realizada" },
+  { label: "Resultado", value: "Liminar Deferida - Veículo Devolvido" },
+];
+
 const results = [
   "Busca e apreensão suspensa por decisão judicial",
   "Cláusulas abusivas reconhecidas pelo juiz",
@@ -16,20 +27,28 @@ const results = [
   "Contrato revisado e dívida recalculada",
 ];
 
-const WA_URL =
-  "https://wa.me/556592618251?text=Ol%C3%A1!+Meu+ve%C3%ADculo+foi+bloqueado+e+gostaria+de+entender+meus+direitos.";
+type CaseStudySectionProps = {
+  waUrl?: string;
+  variant?: "default" | "preview-copy";
+};
 
-export function CaseStudySection() {
+export function CaseStudySection({
+  waUrl = PUBLIC_WA_URL,
+  variant = "default",
+}: CaseStudySectionProps = {}) {
+  const isPreviewCopy = variant === "preview-copy";
+  const displayedProcessDetails = isPreviewCopy ? previewProcessDetails : processDetails;
+
   return (
     <section
       id="caso"
-      className="py-20"
+      className={isPreviewCopy ? "py-16" : "py-20"}
       style={{ backgroundColor: "rgb(229,225,209)" }}
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 reveal">
-          <p className="text-xs font-semibold tracking-widest text-[#B8902A] uppercase mb-4">
+          <p className="text-xs font-semibold tracking-widest text-[#806315] uppercase mb-4">
             Caso real
           </p>
           <h2
@@ -40,8 +59,13 @@ export function CaseStudySection() {
           </h2>
           <p className="text-foreground/60 max-w-xl mx-auto">
             Um caso real de defesa bem-sucedida contra busca e apreensão
-            indevida de veículo financiado em Mato Grosso.
+            indevida de veículo financiado{isPreviewCopy ? "." : " em Mato Grosso."}
           </p>
+          {isPreviewCopy && (
+            <p className="mx-auto mt-3 max-w-xl text-xs text-foreground/65">
+              Dados pessoais e número do processo foram omitidos para preservar o sigilo.
+            </p>
+          )}
         </div>
 
         {/* Two cards */}
@@ -58,12 +82,12 @@ export function CaseStudySection() {
               </h3>
             </div>
             <div className="space-y-4">
-              {processDetails.map((item) => (
+              {displayedProcessDetails.map((item) => (
                 <div
                   key={item.label}
                   className="flex items-start justify-between gap-4 py-3 border-b border-border/50 last:border-0"
                 >
-                  <span className="text-sm text-foreground/50 shrink-0">
+                  <span className="text-sm text-foreground/65 shrink-0">
                     {item.label}
                   </span>
                   <span className="text-sm font-medium text-foreground text-right">
@@ -73,13 +97,13 @@ export function CaseStudySection() {
               ))}
             </div>
             <a
-              href={WA_URL}
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
             >
               <ExternalLink className="w-4 h-4" />
-              Consultar jurisprudência similar
+              Consultar Especialista
             </a>
           </div>
 
@@ -110,8 +134,8 @@ export function CaseStudySection() {
                 irregularidade na notificação afasta a mora e impede a
                 consolidação da propriedade em favor do credor.&rdquo;
               </p>
-              <footer className="text-xs text-foreground/50">
-                - Fundamento legal: DL 911/69 c/c STJ, REsp 1.418.593
+              <footer className="text-xs text-foreground/65">
+                Fundamento jurídico consultado no Decreto-Lei 911/69 e em precedentes do STJ.
               </footer>
             </blockquote>
           </div>

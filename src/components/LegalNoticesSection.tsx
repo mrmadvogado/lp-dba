@@ -1,4 +1,4 @@
-import { Scale, Info } from "lucide-react";
+import { Scale } from "lucide-react";
 
 export function LegalNoticesSection() {
   return (

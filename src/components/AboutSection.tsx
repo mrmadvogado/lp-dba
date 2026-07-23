@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ExternalLink, CheckCircle, Star } from "lucide-react";
+import { GOOGLE_BUSINESS_URL } from "@/lib/constants";
 
 const reviews = [
   {
@@ -7,7 +8,7 @@ const reviews = [
     author: "Gisele Maria",
   },
   {
-    text: "Meu carro estava bloqueado no DETRAN e eu não sabia o que fazer. O escritório do Dr. Marlon conseguiu o desbloqueio rápido e ainda revisou meu contrato!",
+    text: "Meu carro foi apreendido pelo banco e eu não sabia o que fazer. O escritório do Dr. Marlon conseguiu resolver a situação e ainda revisou meu contrato!",
     author: "Rômulo Alves",
   },
   {
@@ -15,8 +16,6 @@ const reviews = [
     author: "Vitor Pardim",
   },
 ];
-
-const GOOGLE_URL = "https://share.google/3dg33GIdESjASkytz";
 
 export function AboutSection() {
   return (
@@ -58,7 +57,7 @@ export function AboutSection() {
             </p>
 
             <a
-              href={GOOGLE_URL}
+              href={GOOGLE_BUSINESS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-white font-medium px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors"
