@@ -6,6 +6,8 @@ import { useEffect } from "react";
 
 const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-45HY9FXZLY";
+const GOOGLE_ADS_ID =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "AW-18347673718";
 const CONSENT_KEY = "mrm-consent-v1";
 const ATTRIBUTION_KEY = "mrm-attribution-v1";
 const SESSION_KEY = "mrm-session-v1";
@@ -607,7 +609,7 @@ export function Analytics() {
   return (
     <>
       <Script id="mrm-consent-default" strategy="beforeInteractive">
-        {`window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};window.gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});window.gtag('set','url_passthrough',true);window.gtag('set','ads_data_redaction',true);window.gtag('js',new Date());window.gtag('config','${GA_MEASUREMENT_ID}',{send_page_view:false,anonymize_ip:true});`}
+        {`window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};window.gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});window.gtag('set','url_passthrough',true);window.gtag('set','ads_data_redaction',true);window.gtag('js',new Date());window.gtag('config','${GA_MEASUREMENT_ID}',{send_page_view:false,anonymize_ip:true});window.gtag('config','${GOOGLE_ADS_ID}',{send_page_view:false});`}
       </Script>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
