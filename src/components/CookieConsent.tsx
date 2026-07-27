@@ -29,11 +29,14 @@ export function CookieConsent() {
   const [marketing, setMarketing] = useState(false);
 
   useEffect(() => {
+    let visibilityTimer: number | undefined;
     const saved = localStorage.getItem(CONSENT_KEY);
     const legacy = localStorage.getItem("cookie-consent");
     if (!saved && legacy === "accepted") {
       saveConsent(true, false);
-    } else if (!saved) setVisible(true);
+    } else if (!saved) {
+      visibilityTimer = window.setTimeout(() => setVisible(true), 0);
+    }
 
     const openPreferences = () => {
       const current = localStorage.getItem(CONSENT_KEY);
@@ -51,7 +54,10 @@ export function CookieConsent() {
     };
 
     window.addEventListener("mrm:open-consent", openPreferences);
-    return () => window.removeEventListener("mrm:open-consent", openPreferences);
+    return () => {
+      if (visibilityTimer !== undefined) window.clearTimeout(visibilityTimer);
+      window.removeEventListener("mrm:open-consent", openPreferences);
+    };
   }, []);
 
   if (!visible) return null;

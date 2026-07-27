@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { AlertBar } from "@/components/AlertBar";
 import { Navbar } from "@/components/Navbar";
@@ -152,6 +153,23 @@ export function LocationLandingPage({ location }: { location: MtLocation }) {
           showHeroIdentity={!useTrackerHero}
           showHeroCredentials={!useTrackerHero}
         />
+
+        <nav
+          aria-label="Navegação estrutural"
+          className="border-y border-border/50 bg-white"
+        >
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-4 text-sm text-foreground/55">
+            <Link href={basePath} className="hover:text-primary">
+              Defesa de Busca e Apreensão
+            </Link>
+            <span aria-hidden="true">/</span>
+            <Link href={`${basePath}/mato-grosso`} className="hover:text-primary">
+              Mato Grosso
+            </Link>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{location.city}</span>
+          </div>
+        </nav>
 
         <PreviewInstitutionalReviewsSection />
 

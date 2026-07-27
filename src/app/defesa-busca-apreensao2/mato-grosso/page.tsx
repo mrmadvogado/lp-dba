@@ -54,6 +54,11 @@ export default function MatoGrossoHubPage() {
       <main>
         <section className="bg-background pb-16 pt-36 lg:pb-20 lg:pt-44">
           <div className="mx-auto max-w-7xl px-4">
+            <nav aria-label="Navegação estrutural" className="mb-7 flex flex-wrap items-center gap-2 text-sm text-foreground/55">
+              <Link href={publicBase} className="hover:text-primary">Defesa de Busca e Apreensão</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Mato Grosso</span>
+            </nav>
             <p className="text-xs font-semibold uppercase tracking-widest text-[#806315]">Atuação estadual</p>
             <h1 className="mt-4 max-w-5xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl" style={{ fontFamily: "var(--font-poppins)" }}>Advogado de Busca e Apreensão em Mato Grosso</h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/75">A MRM Advogados tem sede em Cuiabá e oferece atendimento online para análise de busca e apreensão de veículos em diferentes regiões de Mato Grosso. Cada página abaixo explica como o atendimento funciona na cidade, sem divulgar filiais inexistentes.</p>

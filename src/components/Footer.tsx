@@ -82,6 +82,9 @@ function PreviewCopyFooter({ waUrl, basePath }: { waUrl: string; basePath: strin
             <nav className="mt-5 space-y-3" aria-label="Navegação do rodapé">
               <Link href={basePath} className="block text-sm text-white/60 transition hover:text-white">Início</Link>
               <Link href={`${basePath}#dores`} className="block text-sm text-white/60 transition hover:text-white">Serviços</Link>
+              <Link href={`${basePath}/mato-grosso`} className="block text-sm text-white/60 transition hover:text-white">Atuação em Mato Grosso</Link>
+              <Link href={`${SITE_URL}/blog`} className="block text-sm text-white/60 transition hover:text-white">Conteúdos jurídicos</Link>
+              <Link href={SITE_URL} className="block text-sm text-white/60 transition hover:text-white">Site institucional</Link>
               <Link href={`${basePath}#reconhecimento`} className="block text-sm text-white/60 transition hover:text-white">O escritório</Link>
               <Link href={`${basePath}#como-funciona`} className="block text-sm text-white/60 transition hover:text-white">Como funciona</Link>
               <Link href={`${basePath}#faq`} className="block text-sm text-white/60 transition hover:text-white">Dúvidas frequentes</Link>
