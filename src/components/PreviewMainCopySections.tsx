@@ -105,7 +105,7 @@ export function PreviewMainHeroSection({
                   fill
                   unoptimized={heroImageSrc.startsWith("http")}
                   sizes={heroImageLandscape ? "(max-width: 1024px) calc(100vw - 32px), 760px" : "(max-width: 640px) calc(100vw - 32px), 420px"}
-                  className={`object-cover transition-transform duration-500 group-hover:scale-105 ${heroImageLandscape ? "object-center" : "object-top"}`}
+                  className={`object-cover transition-transform duration-500 group-hover:scale-105 ${heroImageLandscape ? "object-center" : "object-left"}`}
                   priority
                 />
                 {showHeroIdentity && (
@@ -301,7 +301,7 @@ export function PreviewInstitutionalReviewsSection() {
                   alt="Dr. Marlon Rocha, advogado especialista em Direito Bancário"
                   fill
                   sizes="(max-width: 1024px) 100vw, 640px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="object-cover object-left transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary via-primary/90 to-transparent px-6 pb-3 pt-14 text-white">
                   <p className="text-lg font-semibold leading-tight text-white">Dr. Marlon Rocha</p>
