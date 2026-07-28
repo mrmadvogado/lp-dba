@@ -78,7 +78,7 @@ export function HeroSection() {
                   alt="Dr. Marlon Rocha - Especialista em Busca e Apreensão de Veículos"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"
-                  className="object-cover object-left transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-[17%_center] transition-transform duration-500 group-hover:scale-105"
                   priority
                 />
                 {/* Name overlay */}

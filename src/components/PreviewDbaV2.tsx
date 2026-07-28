@@ -246,7 +246,7 @@ export function PreviewHeroSection({ variant = "direct" }: { variant?: PreviewVa
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 440px"
-                className="object-cover object-left"
+                className="object-cover object-[17%_center]"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/90 to-transparent px-6 pb-6 pt-20">
                 <p className="text-xl font-bold text-white">Dr. Marlon Rocha</p>
