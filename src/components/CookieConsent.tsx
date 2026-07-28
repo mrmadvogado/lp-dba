@@ -81,9 +81,6 @@ export function CookieConsent() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <button onClick={() => finish(false, false)} className="rounded-lg border border-white/25 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10">
-              Recusar opcionais
-            </button>
             <button onClick={() => setPreferences((value) => !value)} className="rounded-lg border border-white/25 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10">
               Configurar
             </button>
@@ -107,9 +104,14 @@ export function CookieConsent() {
               <input type="checkbox" checked={marketing} onChange={(event) => setMarketing(event.target.checked)} className="mt-0.5 accent-[#D4AA40]" />
               <span><strong className="block text-white">Publicidade</strong>Permite atribuição de campanhas e públicos de remarketing.</span>
             </label>
-            <button onClick={() => finish(analytics, marketing)} className="rounded-lg bg-white px-4 py-2 text-xs font-semibold text-[rgb(27,45,79)] sm:col-start-3">
-              Salvar escolhas
-            </button>
+            <div className="flex flex-wrap justify-end gap-2 sm:col-span-3">
+              <button onClick={() => finish(false, false)} className="rounded-lg border border-white/25 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10">
+                Recusar opcionais
+              </button>
+              <button onClick={() => finish(analytics, marketing)} className="rounded-lg bg-white px-4 py-2 text-xs font-semibold text-[rgb(27,45,79)]">
+                Salvar escolhas
+              </button>
+            </div>
           </div>
         )}
       </div>

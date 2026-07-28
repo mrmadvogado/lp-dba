@@ -161,12 +161,12 @@ export function PreviewHeroSection({ variant = "direct" }: { variant?: PreviewVa
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-4 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
         <div>
-          <div className="mb-6 flex flex-wrap gap-2.5">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AA40]/30 bg-[#D4AA40]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E5C46F]">
+          <div className="mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs uppercase tracking-[0.12em]">
+            <span className="inline-flex items-center gap-2 border-l-2 border-[#D4AA40] pl-3 font-semibold text-[#E5C46F]">
               <ShieldCheck className="h-3.5 w-3.5" />
               {direct ? "Defesa em busca e apreensão de veículo" : "Direito Bancário"}
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/75">
+            <span className="font-medium text-white/65">
               Atendimento online em todo o Brasil
             </span>
           </div>

@@ -57,12 +57,11 @@ export function PreviewMainHeroSection({
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className={`grid items-center gap-12 ${heroImageLandscape ? "lg:grid-cols-[0.82fr_1.18fr] lg:gap-10" : "lg:grid-cols-2 lg:gap-16"}`}>
           <div className="space-y-6">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D4AA40]/35 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#806315]">
-                <span className="w-1 h-1 rounded-full bg-[#806315] inline-block" />
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold uppercase tracking-[0.12em]">
+              <span className="border-l-2 border-[#D4AA40] pl-3 text-[#806315]">
                 Defesa em busca e apreensão de veículo
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white border border-border text-foreground/70 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide">
+              <span className="inline-flex items-center gap-1.5 text-foreground/65">
                 <Scale className="w-3.5 h-3.5" />
                 {locationLabel ?? "Atendimento especializado"}
               </span>
